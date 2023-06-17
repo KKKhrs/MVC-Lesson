@@ -1,0 +1,47 @@
+﻿@model IEnumerable<slnEmployee.Models.tEmployee>
+
+@{
+    ViewBag.Title = "員工管理";
+}
+
+<h2>員工管理</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fEmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fDepId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fEmpId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fDepId)
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "Edit", new { id = item.fEmpId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("刪除", "Delete", new { id = item.fEmpId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

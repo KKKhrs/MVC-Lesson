@@ -1,0 +1,46 @@
+﻿@model slnEmployee.Models.tEmployee
+
+@{
+    ViewBag.Title = "員工資料刪除";
+}
+
+<h2>員工資料刪除</h2>
+<br />
+<h4>你確定要刪除嗎？</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fDepId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fDepId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    }
+</div>
