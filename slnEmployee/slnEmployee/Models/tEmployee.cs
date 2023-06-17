@@ -18,7 +18,7 @@ namespace slnEmployee.Models
     {
         [DisplayName("員工編號")]
         [Required(ErrorMessage = "員工編號不可空白")]
-        [StringLength(7, ErrorMessage = "員工編號必須是3~7個字元", MinimumLength = 3)]
+        [StringLength(9, ErrorMessage = "員工編號必須是3~9個字元", MinimumLength = 3)]
         public string fEmpId { get; set; }
 
         [DisplayName("姓名")]
